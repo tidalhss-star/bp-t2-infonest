@@ -1,416 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비교 — 유흥 예산 가이드</title>
-    <meta name="description" content="서울 주요 유흥 업종별 비용 구조와 서비스 특성을 객관적 데이터로 비교 분석합니다. 예산 구간에 따른 최적 업종 매칭과 실질적 선택 기준을 제시합니다.">
-    <meta name="keywords" content="유흥, 예산 가이드, 서울, 셔츠룸, 룸싸롱, 텐프로, 텐카페, 쩜오, 하이퍼블릭, 풀싸롱, 가라오케, 노래방, 비즈니스클럽, 마사지, 펍, 예산 비교, 업종 비교">
-    <link rel="canonical" href="https://infonest.online/blog-2.html">
-    <meta property="og:title" content="유흥 예산 가이드 — 업종별 비교 분석과 선택 기준">
-    <meta property="og:description" content="서울 주요 유흥 업종의 예산 구조, 서비스 구성을 데이터 기반으로 비교하고 실용적 선택 기준을 안내합니다.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://infonest.online/blog-2.html">
-    <meta property="og:image" content="https://infonest.online/og-image.j">
-    <style>
-        :root {
-            --swiss-bg: #fafaf8;
-            --swiss-surface: #ffffff;
-            --swiss-border: #e0ded9;
-            --swiss-text: #1a1a18;
-            --swiss-text-secondary: #5c5b55;
-            --swiss-accent: #2b2b27;
-            --swiss-accent-light: #4a4943;
-            --swiss-spacing-xs: 0.5rem;
-            --swiss-spacing-sm: 1rem;
-            --swiss-spacing-md: 1.5rem;
-            --swiss-spacing-lg: 2.5rem;
-            --swiss-spacing-xl: 4rem;
-            --swiss-font-mono: 'SF Mono', 'Consolas', 'Monaco', monospace;
-            --swiss-font-sans: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            --swiss-radius: 2px;
-            --swiss-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            --swiss-transition: 0.18s ease;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--swiss-font-sans);
-            background-color: var(--swiss-bg);
-            color: var(--swiss-text);
-            line-height: 1.6;
-            letter-spacing: -0.01em;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            max-width: 768px;
-            margin: 0 auto;
-            padding: 0 var(--swiss-spacing-md);
-        }
-
-        header {
-            border-bottom: 1px solid var(--swiss-border);
-            background: var(--swiss-surface);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(8px);
-            background: rgba(255,255,255,0.92);
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--swiss-spacing-sm) 0;
-        }
-
-        .logo {
-            font-family: var(--swiss-font-mono);
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            color: var(--swiss-text);
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .logo span {
-            color: var(--swiss-text-secondary);
-            font-weight: 400;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: var(--swiss-spacing-md);
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--swiss-text-secondary);
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            transition: color var(--swiss-transition);
-            text-transform: uppercase;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--swiss-text);
-        }
-
-        .nav-links a.active {
-            border-bottom: 2px solid var(--swiss-text);
-            padding-bottom: 2px;
-        }
-
-        .page-header {
-            padding: var(--swiss-spacing-xl) 0 var(--swiss-spacing-lg);
-            border-bottom: 1px solid var(--swiss-border);
-            margin-bottom: var(--swiss-spacing-lg);
-        }
-
-        .page-header .eyebrow {
-            font-family: var(--swiss-font-mono);
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--swiss-text-secondary);
-            margin-bottom: var(--swiss-spacing-xs);
-        }
-
-        .page-header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            line-height: 1.2;
-            color: var(--swiss-text);
-            margin-bottom: var(--swiss-spacing-xs);
-        }
-
-        .page-header .subtitle {
-            font-size: 1rem;
-            color: var(--swiss-text-secondary);
-            max-width: 560px;
-            line-height: 1.5;
-        }
-
-        .comparison-table-wrapper {
-            overflow-x: auto;
-            margin: var(--swiss-spacing-lg) 0;
-            border: 1px solid var(--swiss-border);
-            border-radius: var(--swiss-radius);
-            background: var(--swiss-surface);
-            box-shadow: var(--swiss-shadow);
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.85rem;
-            min-width: 680px;
-        }
-
-        .comparison-table thead th {
-            background: var(--swiss-accent);
-            color: #fafaf8;
-            font-family: var(--swiss-font-mono);
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            padding: var(--swiss-spacing-sm) var(--swiss-spacing-md);
-            text-align: left;
-            font-weight: 500;
-            border-bottom: 2px solid var(--swiss-accent-light);
-        }
-
-        .comparison-table tbody td {
-            padding: var(--swiss-spacing-sm) var(--swiss-spacing-md);
-            border-bottom: 1px solid var(--swiss-border);
-            color: var(--swiss-text);
-            vertical-align: top;
-        }
-
-        .comparison-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table tbody tr:hover {
-            background: #f7f6f2;
-        }
-
-        .comparison-table .highlight-cell {
-            font-weight: 600;
-            color: var(--swiss-accent);
-        }
-
-        .badge {
-            display: inline-block;
-            font-family: var(--swiss-font-mono);
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 2px 8px;
-            border-radius: 2px;
-            background: #f0efe9;
-            color: var(--swiss-text-secondary);
-            margin-right: 4px;
-            margin-bottom: 4px;
-        }
-
-        .badge.accent {
-            background: var(--swiss-accent);
-            color: #fafaf8;
-        }
-
-        .analysis-section {
-            margin: var(--swiss-spacing-xl) 0;
-        }
-
-        .analysis-section h2 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--swiss-text);
-            margin-bottom: var(--swiss-spacing-sm);
-            padding-bottom: var(--swiss-spacing-xs);
-            border-bottom: 2px solid var(--swiss-accent);
-            display: inline-block;
-        }
-
-        .analysis-section h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--swiss-text);
-            margin-top: var(--swiss-spacing-md);
-            margin-bottom: var(--swiss-spacing-xs);
-        }
-
-        .analysis-section p {
-            color: var(--swiss-text-secondary);
-            margin-bottom: var(--swiss-spacing-sm);
-            line-height: 1.7;
-        }
-
-        .insight-card {
-            background: var(--swiss-surface);
-            border: 1px solid var(--swiss-border);
-            border-left: 4px solid var(--swiss-accent);
-            padding: var(--swiss-spacing-md);
-            margin: var(--swiss-spacing-md) 0;
-            border-radius: var(--swiss-radius);
-        }
-
-        .insight-card .insight-label {
-            font-family: var(--swiss-font-mono);
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            color: var(--swiss-text-secondary);
-            margin-bottom: 4px;
-        }
-
-        .insight-card p {
-            margin-bottom: 0;
-            color: var(--swiss-text);
-            font-weight: 500;
-        }
-
-        .faq-section {
-            margin: var(--swiss-spacing-xl) 0;
-            border-top: 1px solid var(--swiss-border);
-            padding-top: var(--swiss-spacing-lg);
-        }
-
-        .faq-section h2 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: var(--swiss-spacing-md);
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--swiss-border);
-            padding: var(--swiss-spacing-sm) 0;
-        }
-
-        .faq-item h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--swiss-text);
-            cursor: default;
-            margin-bottom: 4px;
-        }
-
-        .faq-item p {
-            font-size: 0.85rem;
-            color: var(--swiss-text-secondary);
-            line-height: 1.6;
-        }
-
-        .footer {
-            border-top: 1px solid var(--swiss-border);
-            padding: var(--swiss-spacing-lg) 0;
-            margin-top: var(--swiss-spacing-xl);
-            text-align: center;
-        }
-
-        .footer p {
-            font-family: var(--swiss-font-mono);
-            font-size: 0.7rem;
-            color: var(--swiss-text-secondary);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 var(--swiss-spacing-sm);
-            }
-
-            .page-header h1 {
-                font-size: 1.5rem;
-            }
-
-            .nav-links {
-                gap: var(--swiss-spacing-sm);
-            }
-
-            .nav-links a {
-                font-size: 0.7rem;
-            }
-
-            .comparison-table {
-                min-width: 100%;
-                font-size: 0.75rem;
-            }
-
-            .comparison-table thead th,
-            .comparison-table tbody td {
-                padding: var(--swiss-spacing-xs) var(--swiss-spacing-sm);
-            }
-
-            .header-inner {
-                flex-direction: column;
-                gap: var(--swiss-spacing-xs);
-                align-items: flex-start;
-            }
-
-            .analysis-section h2 {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="bpaas-design-system" content="editorial-apple">
+  <meta name="bpaas-design-theme" content="kr-warm-grid">
+  <title>유흥 예산 가이드 - 비교</title>
+  <meta name="description" content="서울 지역의 다양한 업종을 비교·정리하여 1인 예산 기준 비교 중심의 실용적인 정보를 제공하는 블로그입니다.">
+  <meta name="keywords" content="유흥 예산 가이드, 서울, 비교, 정보 블로그">
+  <link rel="canonical" href="https://infonest.online/blog-2.html">
+  <meta property="og:title" content="유흥 예산 가이드 - 비교">
+  <meta property="og:description" content="서울 지역의 다양한 업종을 비교·정리하여 1인 예산 기준 비교 중심의 실용적인 정보를 제공하는 블로그입니다.">
+  <meta property="og:url" content="https://infonest.online/blog-2.html">
 </head>
 <body>
-    <header class="nav">
-        <div class="container header-inner">
-            <a href="/" class="logo">Info<span>Nest</span></a>
-            <ul class="nav-links">
-                <li><a href="/">개요</a></li>
-                <li><a href="/" class="active">비교</a></li>
-                <li><a href="/">예산</a></li>
-                <li><a href="/">체크리스트</a></li>
-                <li><a href="/">FAQ</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="page-header">
-            <p class="eyebrow">Comparative Analysis</p>
-            <h1>업종별 예산 구조 비교</h1>
-            <p class="subtitle">서울 주요 유흥 업종의 예산 구간, 서비스 구성, 시간당 효율을 데이터 기반으로 비교하여 예산에 최적화된 선택을 지원합니다.</p>
-        </section>
-
-        <section class="comparison-table-wrapper">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>업종</th>
-                        <th>1인 예산 범위</th>
-                        <th>핵심 구성</th>
-                        <th>시간 효율</th>
-                        <th>추천 대상</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="highlight-cell">룸싸롱</td>
-                        <td>30만원 – 70만원</td>
-                        <td>주류·안주 포함, 전속 매니저 배석, 프라이빗 룸</td>
-                        <td>2–3시간 집중 세션</td>
-                        <td><span class="badge accent">비즈니스</span> <span class="badge">단체</span></td>
-                    </tr>
-                    <tr>
-                        <td class="highlight-cell">텐프로 / 텐카페</td>
-                        <td>25만원 – 50만원</td>
-                        <td>매니저 교대 시스템, 시간 정량제, 룸 포함</td>
-                        <td>시간당 비용 고정, 예측 가능</td>
-                        <td><span class="badge accent">신규 방문자</span> <span class="badge">1인</span></td>
-                    </tr>
-                    <tr>
-                        <td class="highlight-cell">쩜오</td>
-                        <td>15만원 – 30만원</td>
-                        <td>주류 중심, 간소화된 서비스, 오픈형 룸</td>
-                        <td>짧은 체류(1–2시간) 적합</td>
-                        <td><span class="badge">가성비</span> <span class="badge">소규모</span></td>
-                    </tr>
-                    <tr>
+  <nav class="nav-present">
+    <ul>
+      <li><a href="#">홈</a></li>
+      <li><a href="#">비교</a></li>
+      <li><a href="#">리뷰</a></li>
+    </ul>
+  </nav>
+  <header class="k-head-a47l">
+    <h1>비교</h1>
+  </header>
+  <main>
+    <section class="r-foot-budp">
+      <h2>서울 지역의 다양한 업종 비교</h2>
+      <p>서울 지역의 다양한 업종을 비교·정리하여 1인 예산 기준 비교 중심의 실용적인 정보를 제공하는 블로그입니다.</p>
+    </section>
+    <section class="v-btn-cnxy">
+      <h2>비교 대상</h2>
+      <ul>
+        <li><a href="#">업종1</a></li>
+        <li><a href="#">업종2</a></li>
+        <li><a href="#">업종3</a></li>
+      </ul>
+    </section>
+    <section class="x-img-9h2d">
+      <h2>비교 차트</h2>
+      <img src="#" alt="비교 차트">
+    </section>
+  </main>
+  <footer class="k-btn-gp34">
+    <p>&copy; 2023 유흥 예산 가이드</p>
+  </footer>
 </body>
 </html>
