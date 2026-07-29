@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://infonest.online/sitemap.xml
+Sitemap: https://infonest.online/sitemap-index.xml
