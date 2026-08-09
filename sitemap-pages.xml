@@ -46,6 +46,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://infonest.online/posts/field_note-004-fr2y0a.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://infonest.online/posts/field_note-005-1cf8hoi.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -57,6 +62,11 @@
   </url>
   <url>
     <loc>https://infonest.online/posts/guide-001-9lpsxi.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://infonest.online/posts/guide-003-1m8jee0.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -96,7 +106,17 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://infonest.online/posts/major_compare-005-3ptgxu.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://infonest.online/posts/major_compare-005-ezft9z.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://infonest.online/posts/myth-002-10ilxjx.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -132,6 +152,11 @@
   </url>
   <url>
     <loc>https://infonest.online/posts/myth-005-on6r6d.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://infonest.online/posts/qa-001-15e6wkf.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
