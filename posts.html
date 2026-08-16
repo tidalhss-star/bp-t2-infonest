@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · t2-infonest</title>
+  <meta name="description" content="t2-infonest에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://infonest.online/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ body {
+ font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+ background-color: #faf8f5;
+ color: #2d2a26;
+ line-height: 1.6;
+ font-weight: 400;
+ letter-spacing: -0.01em;
+ }
+
+ .t-head-z351 {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+
+ .t-nav-gt06 {
+ border-bottom: 1px solid #e0dcd5;
+ position: sticky;
+ top: 0;
+ background-color: #faf8f5;
+ z-index: 100;
+ padding: 16px 0;
+ }
+
+ .t-nav-gt06-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+
+ .x-head-96y2 {
+ font-size: 1.4rem;
+ font-weight: 650;
+ letter-spacing: -0.02em;
+ color: #2d2a26;
+ text-decoration: none;
+ }
+
+ .x-txt-o1vp {
+ display: flex;
+ gap: 28px;
+ align-items: center;
+ }
+
+ .x-txt-o1vp a {
+ text-decoration: none;
+ color: #4a4742;
+ font-size: 0.9rem;
+ font-weight: 500;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.2s ease, color 0.2s ease;
+ padding-bottom: 4px;
+ }
+
+ .x-txt-o1vp a:hover {
+ color: #e07a5f;
+ border-bottom-color: #e07a5f;
+ }
+
+ .x-body-i5q9-wrap {
+ display: flex;
+ align-items: center;
+ border: 1px solid #d1cbc2;
+ border-radius: 0;
+ padding: 6px 12px;
+ background: #ffffff;
+ }
+
+ .x-body-i5q9-input {
+ border: none;
+ outline: none;
+ font-size: 0.85rem;
+ background: transparent;
+ font-family: inherit;
+ color: #2d2a26;
+ width: 130px;
+ }
+
+ .x-body-i5q9-btn {
+ background: none;
+ border: none;
+ cursor: pointer;
+ color: #2d2a26;
+ font-size: 1rem;
+ padding-left: 8px;
+ display: flex;
+ align-items: center;
+ }
+
+ .q-txt-9obp {
+ display: none;
+ background: none;
+ border: 1px solid #d7cbc2;
+ padding: 6px 10px;
+ cursor: pointer;
+ font-size: 1.2rem;
+ color: #2d2a26;
+ background: #ffffff;
+ }
+
+ .v-ico-1p62-nav {
+ display: none;
+ flex-direction: column;
+ gap: 12px;
+ padding: 16px 24px;
+ background: #faf8f5;
+ border-bottom: 1px solid #e0d2d5;
+ }
+
+ .v-ico-1p62-nav a {
+ text-decoration: none;
+ color: #2d2a26;
+ font-weight: 500;
+ font-size: 0.95rem;
+ }
+
+ .n-btn-fyvj {
+ padding: 56px 0 48px;
+ border-bottom: 1px solid #e0d2d5;
+ }
+
+ .n-btn-fyvj-tag {
+ font-size: 0.7rem;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: #e07a5f;
+ font-weight: 600;
+ margin-bottom: 12px;
+ }
+
+ .n-btn-fyvj-title {
+ font-size: 2.8rem;
+ font-weight: 650;
+ line-height: 1.2;
+ letter-spacing: -0.025em;
+ max-width: 700px;
+ margin-bottom: 20px;
+ }
+
+ .n-btn-fyvj-desc {
+ font-size: 1.1rem;
+ color: #4d4742;
+ max-width: 600px;
+ border-left: 3px solid #e07a5f;
+ padding-left: 20px;
+ }
+
+ .t-head-snlb-title {
+ font-size: 1.1rem;
+ letter-spacing: 0.08em;
+ text-transform: uppercase;
+ font-weight: 600;
+ color: #6b6560;
+ margin-bottom: 28px;
+ border-bottom: 1px solid #e0d2d5;
+ padding-bottom: 10px;
+ }
+
+ .n-head-waiu {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 16px;
+ margin-bottom: 40px;
+ }
+
+ .n-txt-9s3j {
+ background: #ffffff;
+ border: 1px solid #e7e0d6;
+ padding: 24px;
+ transition: border-color 0.2s;
+ }
+
+ .n-txt-9s3j:hover {
+ border-color: #e07a5f;
+ }
+
+ .n-txt-9s3j-category {
+ font-size: 0.7rem;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: #e07a5f;
+ font-weight: 600;
+ margin-bottom: 8px;
+ }
+
+ .n-txt-9s3j-title {
+ font-size: 1.25rem;
+ font-weight: 650;
+ margin-bottom: 8px;
+ line-height: 1.3;
+ }
+
+ .n-txt-9s3j-excerpt {
+ font-size: 0.9rem;
+ color: #4d4742;
+ margin-bottom: 14px;
+ }
+
+ .n-txt-9s3j-date {
+ font-size: 0.75rem;
+ color: #9a948e;
+ border-top: 1px solid #e7e2d6;
+ padding-top: 10px;
+ }
+
+ .m-txt-u417-grid {
+ display: grid;
+ grid-template-columns: 1fr 320px;
+ gap: 24px;
+ margin-bottom: 40px;
+ }
+
+ .k-body-hh44-list {
+ background: #ffffff;
+ border: 1px solid #e7e2d6;
+ padding: 20px;
+ }
+
+ .k-body-hh44-item {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 12px 0;
+ border-bottom: 1px solid #e7e2d6;
+ font-weight: 500;
+ transition: color 0.2s;
+ cursor: default;
+ }
+
+ .k-body-hh44-item:hover {
+ color: #e07a5f;
+ }
+
+ .k-body-hh44-count {
+ color: #9b948e;
+ font-size: 0.8rem;
+ }
+
+ .r-hero-ifsq-section {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 16px;
+ margin-bottom: 40px;
+ }
+
+ .r-hero-ifsq-card {
+ border: 1px solid #e7e2d6;
+ padding: 24px;
+ background: #ffffff;
+ }
+
+ .r-hero-ifsq-num {
+ font-size: 2rem;
+ font-weight: 650;
+ color: #e07a5f;
+ opacity: 0.25;
+ margin-bottom: 8px;
+ }
+
+ .m-nav-0rmr-item {
+ border-bottom: 1px solid #e7e2d6;
+ padding: 18px 0;
+ }
+
+ .m-nav-0rmr-question {
+ font-weight: 650;
+ font-size: 1.05rem;
+ margin-bottom: 6px;
+ color: #2d2a26;
+ }
+
+ .m-nav-0rmr-answer {
+ font-size: 0.95rem;
+ color: #4d4742;
+ max-width: 650px;
+ }
+
+ .k-main-697a-bio {
+ display: flex;
+ align-items: center;
+ gap: 16px;
+ border: 1px solid #e7e2d6;
+ background: #ffffff;
+ padding: 20px;
+ margin: 40px 0;
+ }
+
+ .k-main-697a-avatar {
+ width: 48px;
+ height: 48px;
+ background: #e7e2d6;
+ border-radius: 0;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 650;
+ color: #2d2a26;
+ }
+
+ .k-main-697a-text strong {
+ font-size: 1rem;
+ }
+
+ .v-txt-mr0a {
+ border-top: 1px solid #e0d2d5;
+ padding: 28px 0;
+ font-size: 0.8rem;
+ color: #6b6560;
+ display: flex;
+ justify-content: space-between;
+ }
+
+ @media (max-width: 768px) {
+ .x-txt-o1vp, .x-body-i5q9-wrap {
+ display: none;
+ }
+ .q-txt-9obp {
+ display: block;
+ }
+ .v-ico-1p62-nav.active {
+ display: flex;
+ }
+ .n-head-waiu,
+ .m-txt-u417-grid,
+ .r-hero-ifsq-section {
+ grid-template-columns: 1fr;
+ }
+ .n-btn-fyvj-title {
+ font-size: 2rem;
+ }
+ .v-txt-mr0a {
+ flex-direction: column;
+ gap: 12px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · t2-infonest">
+  <meta property="og:description" content="t2-infonest에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://infonest.online/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header class="t-nav-gt06">
+ <div class="t-nav-gt06-inner">
+ <a href="/" class="x-head-96y2">유흥 예산 가이드</a>
+ <nav class="x-txt-o1vp">
+ <a href="#">예산 기획</a>
+ <a href="#">지역별 분석</a>
+ <a href="#">비교 정보</a>
+ <a href="#">FAQ</a>
+ </nav>
+ <div class="x-body-i5q9-wrap">
+ <input type="text" class="x-body-i5q9-input" placeholder="검색어">
+ <button class="x-body-i5q9-btn">⌕</button>
+ </div>
+ <button class="q-txt-9obp" id="hamburgerBtn">☰</button>
+ </div>
+ <div class="v-ico-1p62-nav" id="mobileNav">
+ <a href="#">예산 기획</a>
+ <a href="#">지역별 분석</a>
+ <a href="#">비교 정보</a>
+ <a href="#">FAQ</a>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 34개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-001-1n4n9dq.html">사장님이 이거 보면 진짜 전화기 던지겠는데, 손님 눈으로 본 룸 원가 전부 까보겠습니다</a>
+        <p class="post-item__summary">&quot;형, 우리 오늘 예산 얼마나 잡았어?&quot; 이 질문 듣는 순간 나도 모르게 냅킨에 계산기 두드린 적 있다. 잘 모르고 시작했는데, 자꾸 가격표 보면서 '이건 좀 아닌데' 싶은 게 막 쌓이다 보니 결국</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-002-1djgbx3.html">월 3천 찍어도 6개월 버틴 이유, 룸 원가표에 전부 적혀있었다</a>
+        <p class="post-item__summary">아, 그 원가표가 아직도 компьютер 바탕화면에 남아있다. 솔직히 말하면 초보 시절 내가 제일 먼저 산 건 소파가 아니라 쓰리바인더 A4용지 500매짜리 한 박스였다. 한 장당 28원. 룸 1</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-002-1rjxcgb.html">홍대에서 돈 버는 가게와 망하는 가게는 주류 원가 계산 마인드가 다르더라</a>
+        <p class="post-item__summary">지난 화요일 밤 9시쯤, 홍대 걷고싶은거리 뒷골목에 있는 단골 바에 갔어요. 사장님이랑은 2019년부터 알아서 이제는 계산서를 그냥 휙 던져주고 제가 알아서 계산하는 사이죠. 근데 이날은 분위기가 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-004-17xt04e.html">월 3천 찍고 6개월 만에 문 닫은 홍대 가게, 유흥 예산은 처음부터 거꾸로 짜고 있었습니다</a>
+        <p class="post-item__summary">2023년 11월, 홍대 합정 쪽 뒷골목에 있는 12평짜리 위스키 바에서 사장이 계산기를 두드리고 있었다. 월 매출 3,200만 원이 찍혔다는 문자를 받은 지 이틀 뒤, 통장 잔고는 오히려 줄어들어</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-004-fr2y0a.html">권리금 2억짜리 계약서 도장 찍기 전에 내가 눈물 흘리며 뜯어말린 진짜 이유</a>
+        <p class="post-item__summary">마포역 뒤편 지하 계단을 내려가는데, 눅눅한 곰팡이 냄새 사이로 찢어진 소파 가죽 향이 확 풍겼습니다. 테이블 위에는 권리금 2억 원이 선명하게 찍힌 권리금 양수도 계약서와 지난 3개년 치 주류 매</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-005-1cf8hoi.html">2023년 8월, 하루 매출 120 찍던 B룸 가게가 10월에 문 닫은 이유</a>
+        <p class="post-item__summary">2023년 여름, 정확히 8월 둘째 주였어. 주말 하루 매출 120만 원, 손님 4팀 받았고 룸 회전율 거의 1.8 돌파했던 날. 그런데 그 가게가 두 달 뒤인 10월 말에 폐업 공고 붙였어. 이 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-001-1d38yuc.html">유흥 예산 가이드</a>
+        <p class="post-item__summary">어느 날, 나는 친구와 함께 유흥을 즐기기 위해 한 룸을 방문했다. 하지만 그곳에서 제공되는 서비스의 가격과 실제 원가의 차이를 계산해 본 적이 있는가? 나는 그날, 너무 비싼 가격에 놀라고 말도 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-001-9lpsxi.html">룸값 15만원 치고 3만원짜리 위스키 내밀 땐 사장 속으로 웃고 있음</a>
+        <p class="post-item__summary">지난 3월 토요일 밤, 강남역에서 두 블록 떨어진 룸살롱 정산서를 우연히 테이블 밑에서 주웠다. 2시간에 22만원 과금, 위스키 한 병에 18만원. 계산기 두드려보니 원가율 23% 정도 나오더라. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-003-1m8jee0.html">권리금 2억짜리 계약서 뒤에 숨은 룸 마진율의 눈물겨운 진실</a>
+        <p class="post-item__summary">권리금 2억 원을 주고 인수한 강남의 어느 12룸짜리 매장이 첫 달에 올린 순마진율이 고작 3.8%에 불과했다는 사실을 아는 사람은 거의 없습니다. 보통 권리금이 높으면 마진도 엄청날 거라고 생각하</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-003-o1qd4u.html">형이 밤마다 가게에서 몰래 계산기 두드린 사연</a>
+        <p class="post-item__summary">2022년 겨울, 합정역에서 상수 쪽으로 걸어가던 밤이었는데요. 그때 기억나는 게 있어요. 바로 옆자리에서 어떤 사장님이 매출 장부를 펼쳐놓고 계산기를 두드리고 계시더라고요. 솔직히 저는 그때 처음</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-004-mp9ln3.html">권리금 2억 받고 나간 그 가게, 사실은 &amp;#39;쫓겨난&amp;#39; 거였다고?</a>
+        <p class="post-item__summary">홍대 A동 2층에서 4년 버티던 그 가게, 결국 지난 8월에 간판 내렸다. 근데 이거 알아? 사장님 바뀐 줄 알았던 그 자리, 사실은 권리금 한 푼 못 건지고 밤에 짐만 뺀 케이스였어. 나는 이쪽 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-005-3xzj99.html">월 3천 찍고 6개월 만에 접은 룸 떡볶이집, 손익구조를 완전히 잘못 짰던 이야기</a>
+        <p class="post-item__summary">&quot;매출 올리기만 하면 되는 거 아니야?&quot; 그 말 믿고 뛰어든 사람치고 살아남은 거 본 적이 없다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-001-130r8uz.html">홍대에서 가게 망하는 진짜 이유, 내가 몰래 계산해본 원가 썰 풀어본다</a>
+        <p class="post-item__summary">2023년 3월이었어요. 정확히 기억나는 건 그때쯤 제가 자주 가던 홍대 골목의 닭발집이 갑자기 철거 가림막을 쳤거든요. 그 집 사장님, 2년도 안 됐는데 항상 손님이 적어서 마음이 좀 안 좋았어요</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-002-198jl7w.html">홍대 폐업 맛집 리스트 만드는 게 취미인데, 살아남은 애들이 진짜 이상하더라고요</a>
+        <p class="post-item__summary">2023년 3월 기준으로 홍대 메인 스트리트에서 도보 5분 권역 안에만 해도 신규 오픈이 47곳, 그 해 안에 문 닫은 곳이 31곳이었어요. 근데 이 숫자자체은 별 의미 없어요. 진짜 흥미로운 건 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-003-2w8usy.html">사장 몰래 계산한 룸 테이블 원가표, 이게 진짜 유흥 예산 가이드죠</a>
+        <p class="post-item__summary">38,000원짜리 기본 세트가 들어갔을 때, 내 머릿속 계산기는 이미 돌아가고 있었습니다. 음료 두 병(도매가 2,400원), 과일안주(800원), 웨이터 팁(1,000원)을 뺀 뒤 남는 금액. 여</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-003-grnchc.html">권리금 2억, 마진이 사라진 방값 계산법은?</a>
+        <p class="post-item__summary">한밤중에 사무실 전등이 깜빡이며, 내 앞에 놓인 2022년 6월 계약서와 권리금 영수증을 바라보고 있었다. “2억 원 권리금 받고 나갔는데, 실제 마진이 어디까지 남아있지?” 라는 의문이 머리를 스</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-005-3ptgxu.html">사장님 눈치 보며 까발리는 유흥 예산 가이드, 가성비 룸의 진짜 원가율 얼마일까?</a>
+        <p class="post-item__summary">지난주 목요일 밤 11시 반, 마포역 뒷골목의 한 밀실에서 맥주 잔에 맺힌 이슬을 멍하니 바라보고 있었습니다. 테이블에 놓인 골든블루 12년산 병의 라벨이 살짝 들떠 있는 걸 보며, 나는 또 쓸데없</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/major_compare-005-ezft9z.html">권리금 2억 찍은 룸살롱 실거래 내역서 보니까, 유흥 예산 짜는 사람들이 모르는 원가의 진실</a>
+        <p class="post-item__summary">작년 11월, 강남역에서 300미터쯤 떨어진 한 임대사무실에서 저는 어떤 룸살롱의 실거래 내역서를 펼쳐봤어요. 권리금 2억을 받고 나간 곳이었는데, 보증금 5000에 월세 320. 제 느낌상 꽤 괜</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-002-10ilxjx.html">홍대 밤거리에서 사장님 눈치 보며 원가 계산기 두드리던 단골놈의 피눈물 나는 유흥 예산 가이드</a>
+        <p class="post-item__summary">아직도 홍대 입구역 9번 출구 앞 전단지에 적힌 &quot;안주 무제한 공짜&quot;라는 문구만 보고 지하 계단을 내려가시나요?</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-002-13mu0ba.html">유흥_budget_말하는_사람_전부_가짜야_형이_실거래_내역서_보여줄게</a>
+        <p class="post-item__summary">2022년 9월, 강남역에서 200미터 떨어진 룸살롱 하나가 문을 닫았을 때 권리금 2억 원이 오간 내역서를 봤습니다. 그 파티션 하나 설치된 12평짜리 공간에서 월 2,400만 원 매출이 나왔다고</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
